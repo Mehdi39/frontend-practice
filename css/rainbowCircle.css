@@ -1,4 +1,6 @@
-div {
+/* solution 1 */
+
+/* div {
     border-radius: 50%;
 }
 #outer {
@@ -22,4 +24,43 @@ div {
     width: 50px;
     height: 50px;
     border: 25px solid blue;
+} */
+
+/* solution 2 with variable */
+
+/* to change the thickness of circle, just change the --circle-thickness variable value */
+:root {
+    --circle-thickness: 50px;
+}
+
+div {
+    border-radius: 50%;
+}
+#outer {
+    --organe-color: calc(var(--circle-thickness) * 8);
+
+    background-color: orange;
+    width: var(--organe-color);
+    height: var(--organe-color);
+    border: var(--circle-thickness) solid red;
+    padding: var(--circle-thickness);
+}
+
+#middle {
+    --green-color: calc(var(--circle-thickness) * 4);
+
+    background-color: green;
+    width: var(--green-color);
+    height: var(--green-color);
+    border: var(--circle-thickness) solid yellow;
+    padding: var(--circle-thickness);
+}
+
+#inner {
+    --purple-size: calc(var(--circle-thickness) * 2);
+
+    background-color: purple;
+    width: var(--purple-size);
+    height: var(--purple-size);
+    border: var(--circle-thickness) solid blue;
 }
